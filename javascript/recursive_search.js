@@ -1,6 +1,21 @@
+const searchArray = [5,6,7,8]
+
+
 function recursiveSearch(arr, target) {
   // type your code here
+  if(arr.length === 0){
+    return false
+  }
+  if(target === arr[0]){
+    return true
+  } else {
+    const newArr = [...arr]
+    newArr.shift()
+    return recursiveSearch(newArr, target)
+  }
 }
+
+console.log(recursiveSearch(searchArray, 9))
 
 if (require.main === module) {
   // add your own tests in here
